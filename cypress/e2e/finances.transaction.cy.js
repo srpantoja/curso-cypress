@@ -12,10 +12,21 @@ describe('financial transiction suite', ()=>{
             date: '2023-12-31'
         }
         cy.add_transiction_and_save(transiction.description, transiction.income, transiction.date)
-        cy.check_data(transiction.description, transiction.income, transiction.date)
+        cy.check_data_in_table(transiction.description, transiction.income, transiction.date)
+        cy.check_data_in_balance(transiction.income, '#totalDisplay')
+        cy.check_data_in_balance(transiction.income, '#incomeDisplay')
+
     })
 
-    it.skip('cash output successfuly ', ()=> {
-        
+    it('cash output successfuly ', ()=> {
+        const transiction = {
+            description: 'cash output',
+            income: -120,
+            date: '2023-05-25'
+        }
+        cy.add_transiction_and_save(transiction.description, transiction.income, transiction.date)
+        cy.check_data_in_table(transiction.description, transiction.income, transiction.date)
+        cy.check_data_in_balance(transiction.income, '#totalDisplay')
+        cy.check_data_in_balance(transiction.income, '#expenseDisplay')
     })
 })

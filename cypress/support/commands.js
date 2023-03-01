@@ -35,23 +35,33 @@ Cypress.Commands.add('add_transiction_and_save', (description, value, date)=> {
     cy.contains('button', 'Salvar').click()
 })
 
-Cypress.Commands.add('check_data', (description, income, date)=> {
+Cypress.Commands.add('check_data_in_table', (description, income, date)=> {
     const table = cy.get('#data-table tbody tr')
-        table.get('.description').then(($description)=> {
+        table.children('.description').then(($description)=> {
             const value = $description.text()
             expect(value).to.be.equal(description)
         })
 
-        table.get('.income').then(($income)=> {
+        table.parent().children(income > 0? '.income': '.expense').then(($income)=> {
             const value = $income.text()
             const currency = income.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})
-            expect(value).to.be.equal(currency)
+            expect(value).to.be.equal(currency)     
         })
 
-        table.get('.date').then(($date)=> {
+        table.parent().children('.date').then(($date)=> {
             const value = $date.text()
             const newDate = new Date(date)
             newDate.setDate(newDate.getDate() + 1)
             expect(value).to.be.contain(newDate.toLocaleDateString())
         })
+
+        table.parent().children(':nth-child(4)').children('img').should('be.visible')
+})
+
+Cypress.Commands.add('check_data_in_balance', (income, element)=>{
+    cy.get(element).then(($total)=> {
+        const value = $total.text()
+        const currency = income.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})
+        expect(value).to.be.equal(currency)  
+    })
 })
