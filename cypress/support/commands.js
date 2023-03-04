@@ -32,36 +32,47 @@ Cypress.Commands.add('add_transiction_without_save', (description, value, date)=
 
 Cypress.Commands.add('add_transiction_and_save', (description, value, date)=> {
     cy.add_transiction_without_save(description, value, date)
-    cy.contains('button', 'Salvar').click()
+    cy.contains('Salvar').click()
 })
 
-Cypress.Commands.add('check_data_in_table', (description, income, date)=> {
-    const table = cy.get('#data-table tbody tr')
-        table.children('.description').then(($description)=> {
-            const value = $description.text()
-            expect(value).to.be.equal(description)
-        })
+Cypress.Commands.add('check_data_in_table', (description, income, date, row)=> {
+    const table = cy.get('#data-table tbody tr').eq(row)
+        table.children('.description')
+            .should('contain', description)
 
-        table.parent().children(income > 0? '.income': '.expense').then(($income)=> {
-            const value = $income.text()
-            const currency = income.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})
-            expect(value).to.be.equal(currency)     
-        })
+        table.parent().children(income > 0? '.income': '.expense')
+            .should('contain', numberToBRL(income))
 
-        table.parent().children('.date').then(($date)=> {
-            const value = $date.text()
-            const newDate = new Date(date)
-            newDate.setDate(newDate.getDate() + 1)
-            expect(value).to.be.contain(newDate.toLocaleDateString())
-        })
+        table.parent().children('.date')
+            .should('contain', dateToLocaleDate(date))
 
-        table.parent().children(':nth-child(4)').children('img').should('be.visible')
+        table.parent()
+            .children(':nth-child(4)')
+            .children('img')
+            .should('be.visible')
 })
 
 Cypress.Commands.add('check_data_in_balance', (income, element)=>{
     cy.get(element).then(($total)=> {
         const value = $total.text()
-        const currency = income.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})
-        expect(value).to.be.equal(currency)  
+        expect(value).to.be.equal(numberToBRL(income))  
     })
 })
+
+Cypress.Commands.add('delete_data', (description)=> {
+    cy.contains(description)
+        .parent()
+        .children(':nth-child(4)')
+        .children('img')
+        .click()
+})
+
+const numberToBRL = (currency) => {
+    return currency.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})
+}
+
+const dateToLocaleDate = (date) => {
+    const newDate = new Date(date)
+    newDate.setDate(newDate.getDate() + 1)
+    return newDate.toLocaleDateString()
+}
