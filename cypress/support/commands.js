@@ -23,48 +23,62 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-Cypress.Commands.add('add_transiction_without_save', (description, value, date)=> {
+Cypress.Commands.add('add_transiction_without_save', (description, income, date)=> {
     cy.get('#transaction > .button').click()
-    cy.get('#description').type(description)
-    cy.get('#amount').type(value)
-    cy.get('#date').type(date)
+    description !== null && cy.get('#description').type(description)
+    income !== null && cy.get('#amount').type(income)
+    date !== null && cy.get('#date').type(date)
 })
 
-Cypress.Commands.add('add_transiction_and_save', (description, value, date)=> {
-    cy.add_transiction_without_save(description, value, date)
+Cypress.Commands.add('add_transiction_and_save', (description, income, date)=> {
+    cy.add_transiction_without_save(description, income, date)
     cy.contains('Salvar').click()
 })
 
+Cypress.Commands.add('add_transiction_and_cancel', (description, income, date)=> {
+    cy.add_transiction_without_save(description, income, date)
+    cy.contains('Cancel')
+        .click()
+    cy.get('.modal').parent()
+        .should('not.be.visible')
+
+})
 Cypress.Commands.add('check_data_in_table', (description, income, date, row)=> {
     const table = cy.get('#data-table tbody tr').eq(row)
+        
         table.children('.description')
             .should('contain', description)
+            .parent()
 
-        table.parent().children(income > 0? '.income': '.expense')
+        table.children(income > 0? '.income': '.expense')
             .should('contain', numberToBRL(income))
+            .parent()
 
-        table.parent().children('.date')
+        table.children('.date')
             .should('contain', dateToLocaleDate(date))
+            .parent()
 
-        table.parent()
-            .children(':nth-child(4)')
+        table.children(':nth-child(4)')
             .children('img')
             .should('be.visible')
 })
 
 Cypress.Commands.add('check_data_in_balance', (income, element)=>{
-    cy.get(element).then(($total)=> {
-        const value = $total.text()
-        expect(value).to.be.equal(numberToBRL(income))  
-    })
+    cy.get(element).should('contain', numberToBRL(income))
 })
 
-Cypress.Commands.add('delete_data', (description)=> {
-    cy.contains(description)
-        .parent()
+Cypress.Commands.add('delete_data', (row)=> {
+    cy.get('#data-table tbody tr')
+        .eq(row)
         .children(':nth-child(4)')
         .children('img')
         .click()
+})
+
+Cypress.Commands.add('check_alert', (expectedValue)=>{
+    cy.on('window:alert',(alert)=>{
+        expect(alert).to.contains(expectedValue)
+     })
 })
 
 const numberToBRL = (currency) => {
