@@ -1,0 +1,52 @@
+[
+    {
+        "description": "cash 1",
+        "income": 123,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 2",
+        "income": 983,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 3",
+        "income": -1235,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 4",
+        "income": 25,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 5",
+        "income": -212,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 6",
+        "income": -200,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 7",
+        "income": 500,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 8",
+        "income": 230,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 9",
+        "income": -30,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 0",
+        "income": 125,
+        "date": "2023-12-31"
+    }
+]
