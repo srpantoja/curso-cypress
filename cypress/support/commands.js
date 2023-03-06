@@ -23,20 +23,20 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-Cypress.Commands.add('add_transiction_without_save', (description, income, date)=> {
+Cypress.Commands.add('add_transaction_without_save', (description, income, date)=> {
     cy.get('#transaction > .button').click()
     description !== null && cy.get('#description').type(description)
     income !== null && cy.get('#amount').type(income)
     date !== null && cy.get('#date').type(date)
 })
 
-Cypress.Commands.add('add_transiction_and_save', (description, income, date)=> {
-    cy.add_transiction_without_save(description, income, date)
+Cypress.Commands.add('add_transaction_and_save', (description, income, date)=> {
+    cy.add_transaction_without_save(description, income, date)
     cy.contains('Salvar').click()
 })
 
-Cypress.Commands.add('add_transiction_and_cancel', (description, income, date)=> {
-    cy.add_transiction_without_save(description, income, date)
+Cypress.Commands.add('add_transaction_and_cancel', (description, income, date)=> {
+    cy.add_transaction_without_save(description, income, date)
     cy.contains('Cancel')
         .click()
     cy.get('.modal').parent()
@@ -73,6 +73,15 @@ Cypress.Commands.add('delete_data', (row)=> {
         .children(':nth-child(4)')
         .children('img')
         .click()
+})
+
+Cypress.Commands.add('delete_all_data', ()=> {
+    cy.get('#data-table tbody tr').then(($element) => {
+        if($element.length > 0 ) 
+            for(let i = $element.length -1; i >= 0 ; i--)
+                cy.delete_data(i)
+    })
+
 })
 
 Cypress.Commands.add('check_alert', (expectedValue)=>{
