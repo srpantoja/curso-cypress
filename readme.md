@@ -2,6 +2,10 @@
 
 > node instalado
 
+# Documentação de plano de testes
+
+> [plano de testes](plano_de_teste.md)
+
 # Como instalar as dependências
 
 ``` bash
