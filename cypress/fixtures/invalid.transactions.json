@@ -1,0 +1,27 @@
+[
+    {
+        "description": null,
+        "income": -120,
+        "date": "2023-05-25"
+    },
+    {
+        "description": "without fill value",
+        "income": null,
+        "date": "2023-05-25"
+    },
+    {
+        "description": "without fill date",
+        "income": 20,
+        "date": null
+    },
+    {
+        "description": null,
+        "income": null,
+        "date": null
+    },
+    {
+        "description": "cash input",
+        "income": 20,
+        "date": "2023-12-31"
+    }
+]
