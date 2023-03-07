@@ -1,0 +1,252 @@
+[
+    {
+        "description": "cash 1",
+        "income": 123,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 2",
+        "income": 983,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 3",
+        "income": -1235,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 4",
+        "income": 25,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 5",
+        "income": -212,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 6",
+        "income": -200,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 7",
+        "income": 500,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 8",
+        "income": 230,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 9",
+        "income": -30,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 10",
+        "income": 125,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 11",
+        "income": 123,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 12",
+        "income": 983,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 13",
+        "income": -1235,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 14",
+        "income": 25,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 15",
+        "income": -212,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 16",
+        "income": -200,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 17",
+        "income": 500,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 18",
+        "income": 230,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 19",
+        "income": -30,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 20",
+        "income": 125,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 21",
+        "income": 123,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 22",
+        "income": 983,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 23",
+        "income": -1235,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 24",
+        "income": 25,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 25",
+        "income": -212,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 26",
+        "income": -200,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 27",
+        "income": 500,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 28",
+        "income": 230,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 29",
+        "income": -30,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 30",
+        "income": 125,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 31",
+        "income": 123,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 32",
+        "income": 983,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 33",
+        "income": -1235,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 34",
+        "income": 25,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 35",
+        "income": -212,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 36",
+        "income": -200,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 37",
+        "income": 500,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 38",
+        "income": 230,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 39",
+        "income": -30,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 40",
+        "income": 125,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 41",
+        "income": 123,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 42",
+        "income": 983,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 43",
+        "income": -1235,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 44",
+        "income": 25,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 45",
+        "income": -212,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 46",
+        "income": -200,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 47",
+        "income": 500,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 48",
+        "income": 230,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 49",
+        "income": -30,
+        "date": "2023-12-31"
+    },
+    {
+        "description": "cash 50",
+        "income": 125,
+        "date": "2023-12-31"
+    }
+]

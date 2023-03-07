@@ -13,7 +13,7 @@ describe('add transaction suite successfuly', ()=>{
     })
     
 
-    it('cash input successfuly', ()=> {
+    it('cash input successfuly', function() {
         const transaction = [this.fTransaction[0]]
 
         transaction.map((transaction, row)=> {
@@ -30,7 +30,7 @@ describe('add transaction suite successfuly', ()=>{
 
     })
 
-    it('cash output successfuly ', ()=> {
+    it('cash output successfuly ', function() {
         const transaction = [this.fTransaction[2]]
 
         transaction.map((transaction, row)=> {
@@ -48,7 +48,7 @@ describe('add transaction suite successfuly', ()=>{
 
 })
 
-describe('Try to add transaction suite', () => {
+describe('Try to add transaction suite', function() {
     beforeEach(()=>{
         cy.visit("https://dev-finance.netlify.app/")
         cy.fixture('invalid.transactions.json')
@@ -57,7 +57,7 @@ describe('Try to add transaction suite', () => {
             })
     })
 
-    it('try to add transaction without fill description', () => {
+    it('try to add transaction without fill description', function() {
         const transaction = [this.fTransaction[0]]
         cy.check_alert('Por favor, preencha todos os campos corretamente')
 
@@ -67,7 +67,7 @@ describe('Try to add transaction suite', () => {
         
     });
 
-    it('try to add transaction without fill value', () => {
+    it('try to add transaction without fill value', function() {
         const transaction = [this.fTransaction[1]]
 
         cy.check_alert('Por favor, preencha todos os campos corretamente')
@@ -77,7 +77,7 @@ describe('Try to add transaction suite', () => {
         })    
     });
 
-    it('try to add transaction without fill date', () => {
+    it('try to add transaction without fill date', function() {
         
         const transaction = [this.fTransaction[2]]
 
@@ -88,7 +88,7 @@ describe('Try to add transaction suite', () => {
         })    
     });
 
-    it('try to add transaction without fill fields', () => {
+    it('try to add transaction without fill fields', function() {
         const transaction = [this.fTransaction[3]]
         
         cy.check_alert('Por favor, preencha todos os campos corretamente')
@@ -98,7 +98,7 @@ describe('Try to add transaction suite', () => {
         }) 
     });
 
-    it('cancel add transaction', () => {
+    it('cancel add transaction', function() {
         const transaction = [this.fTransaction[4]]
 
         transaction.map((transaction, row)=> {

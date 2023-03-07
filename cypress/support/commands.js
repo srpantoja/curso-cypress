@@ -63,6 +63,11 @@ Cypress.Commands.add('check_data_in_table', (description, income, date, row)=> {
             .should('be.visible')
 })
 
+Cypress.Commands.add('check_empty_table', ()=> {
+    cy.get('#data-table tbody tr')
+        .should('have.length', 0)
+})
+
 Cypress.Commands.add('check_data_in_balance', (income, element)=>{
     cy.get(element).should('contain', numberToBRL(income))
 })

@@ -24,7 +24,9 @@
 16. List transactions with fiveteen data 
 
 ## View amount
-17. View amount with one transaction
+17. View amount with one positive transaction
 18. View amount with five transaction 
 19. View amount with tweenty five transaction 
 20. View amount with fiveteen transaction 
+21. view amount with empty transaction
+22. View amount with one negative transaction
